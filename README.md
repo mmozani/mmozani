@@ -58,14 +58,3 @@
     <img alt="github contribution grid snake animation" src="https://github.com/mmozani/mmozani/blob/output/github-contribution-grid-snake.gif">
   </picture>
 </p>
-```
-
-### 💡 نکات مهم برای فعال‌سازی انیمیشن‌ها:
-
-1.  **انیمیشن مار (Snake Animation):** برای اینکه انیمیشن آخر (مار که کانتریبیوشن‌ها را می‌خورد) کار کند، باید یک **GitHub Action** راه‌اندازی کنید.
-    *   یک فولدر در ریپازیتوری خود بسازید: `.github/workflows`
-    *   یک فایل به نام `snake.yml` بسازید و کدهای مربوط به [این لینک](https://raw.githubusercontent.com/Platane/snk/master/.github/workflows/main.yml) را در آن کپی کنید (باید گزینه‌ها را مطابق داکیومنت آن ریپازیتوری تنظیم کنید تا فایل خروجی را در برنچ `output` ذخیره کند).
-
-2.  **تکنولوژی‌ها:** من یک لیست پیش‌فرض از تکنولوژی‌های پرطرفدار (React, Python, Docker, Go, etc.) قرار دادم. اگر با تکنولوژی دیگری کار می‌کنید، می‌توانید در بخش `Tech Stack` نام‌ها را تغییر دهید (لیست کامل آیکون‌ها در سایت [skillicons.dev](https://skillicons.dev) موجود است).
-
-3.  **تم رنگی:** از تم `tokyonight` استفاده شده که ظاهری مدرن و تیره دارد.
