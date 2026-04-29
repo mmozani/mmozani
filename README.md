@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/mmozani">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=24&pause=1000&color=58A6FF&center=true&vCenter=true&random=false&width=435&lines=Full+Stack+Developer;Clean+Code+Enthusiast;Open+Source+Lover;Always+Learning..." alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=24&pause=1000&color=58A6FF&center=true&vCenter=true&random=false&width=435&lines=Open+Source+Lover;Always+Learning..." alt="Typing SVG" />
   </a>
 </p>
 
