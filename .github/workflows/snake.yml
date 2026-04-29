@@ -1,0 +1,32 @@
+name: Generate Snake
+
+on:
+  schedule:
+    - cron: "0 */6 * * *" # هر ۶ ساعت اجرا می‌شود
+  workflow_dispatch: # دکمه اجرای دستی
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: generate github-contribution-grid-snake.svg
+        uses: Platane/snk@v3
+        with:
+          github_user_name: mmozani
+          outputs: |
+            dist/github-contribution-grid-snake.gif
+            dist/github-contribution-grid-snake-dark.gif?palette=github-dark
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  push:
+    needs: generate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: output
+          force: true
+          directory: dist
