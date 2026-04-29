@@ -2,14 +2,16 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 */6 * * *" # هر ۶ ساعت اجرا می‌شود
-  workflow_dispatch: # دکمه اجرای دستی
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # مرحله ۱: ساخت عکس مار
       - name: Generate Snake
         uses: Platane/snk@v3
         with:
@@ -20,7 +22,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # مرحله ۲: آپلود عکس در برنچ output
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
