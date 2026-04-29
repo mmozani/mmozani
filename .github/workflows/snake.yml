@@ -6,10 +6,11 @@ on:
   workflow_dispatch: # دکمه اجرای دستی
 
 jobs:
-  generate:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: generate github-contribution-grid-snake.svg
+      # مرحله ۱: ساخت عکس مار
+      - name: Generate Snake
         uses: Platane/snk@v3
         with:
           github_user_name: mmozani
@@ -19,14 +20,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  push:
-    needs: generate
-    runs-on: ubuntu-latest
-    steps:
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      # مرحله ۲: آپلود عکس در برنچ output
+      - name: Push to output branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: output
-          force: true
-          directory: dist
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
