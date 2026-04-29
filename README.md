@@ -14,19 +14,6 @@
   <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 </p>
 
-<h3 align="center">⚡ Tech Stack ⚡</h3>
-
-<p align="center">
-  <!-- Frontend -->
-  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,tailwind&perline=7" />
-  <br>
-  <!-- Backend & DB -->
-  <img src="https://skillicons.dev/icons?i=nodejs,python,go,postgres,mongodb,docker,kubernetes&perline=7" />
-  <br>
-  <!-- Tools -->
-  <img src="https://skillicons.dev/icons?i=git,linux,bash,vscode,figma&perline=7" />
-</p>
-
 <p align="center">
   <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 </p>
