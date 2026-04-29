@@ -1,84 +1,71 @@
-name: main
+<h1 align="center">
+  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28px" height="28px">  
+  Hi, I'm mozani
+  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28px" height="28px">  
+</h1>
 
-on: [push]
+<p align="center">
+  <a href="https://github.com/mmozani">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=24&pause=1000&color=58A6FF&center=true&vCenter=true&random=false&width=435&lines=Full+Stack+Developer;Clean+Code+Enthusiast;Open+Source+Lover;Always+Learning..." alt="Typing SVG" />
+  </a>
+</p>
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+</p>
 
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          cache: yarn
-          node-version: 16
-      - run: yarn install --frozen-lockfile
+<h3 align="center">⚡ Tech Stack ⚡</h3>
 
-      - run: yarn type
-      - run: yarn lint
-      - run: yarn test --ci
+<p align="center">
+  <!-- Frontend -->
+  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,tailwind&perline=7" />
+  <br>
+  <!-- Backend & DB -->
+  <img src="https://skillicons.dev/icons?i=nodejs,python,go,postgres,mongodb,docker,kubernetes&perline=7" />
+  <br>
+  <!-- Tools -->
+  <img src="https://skillicons.dev/icons?i=git,linux,bash,vscode,figma&perline=7" />
+</p>
 
-  test-benchmark:
-    runs-on: ubuntu-latest
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+</p>
 
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          cache: yarn
-          node-version: 16
-      - run: yarn install --frozen-lockfile
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=mmozani&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" alt="stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mmozani&theme=tokyonight&hide_border=true" alt="streak" />
+</p>
 
-      - run: ( cd packages/gif-creator ; yarn benchmark )
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mmozani&layout=compact&theme=tokyonight&hide_border=true" alt="languages" />
+</p>
 
-  test-action:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+</p>
 
-      - name: update action.yml to use image from local Dockerfile
-        run: |
-          sed -i "s/image: .*/image: Dockerfile/" action.yml
+<p align="center">
+  <a href="https://github.com/mmozani">
+    <img src="https://komarev.com/ghpvc/?username=mmozani&label=Profile%20Views&color=0e75b6&style=for-the-badge" alt="Profile Views" />
+  </a>
+</p>
 
-      - name: generate-snake-game-from-github-contribution-grid
-        id: generate-snake
-        uses: ./
-        with:
-          github_user_name: platane
-          gif_out_path: dist/github-contribution-grid-snake.gif
-          svg_out_path: dist/github-contribution-grid-snake.svg
+<!-- Snake Game Animation (Requires special setup in Actions) -->
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/mmozani/mmozani/blob/output/github-contribution-grid-snake-dark.gif">
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/mmozani/mmozani/blob/output/github-contribution-grid-snake.gif">
+    <img alt="github contribution grid snake animation" src="https://github.com/mmozani/mmozani/blob/output/github-contribution-grid-snake.gif">
+  </picture>
+</p>
+```
 
-      - name: ensure the generated file exists
-        run: |
-          ls dist
-          test -f ${{ steps.generate-snake.outputs.gif_out_path }}
-          test -f ${{ steps.generate-snake.outputs.svg_out_path }}
+### 💡 نکات مهم برای فعال‌سازی انیمیشن‌ها:
 
-      - uses: crazy-max/ghaction-github-pages@v2.5.0
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+1.  **انیمیشن مار (Snake Animation):** برای اینکه انیمیشن آخر (مار که کانتریبیوشن‌ها را می‌خورد) کار کند، باید یک **GitHub Action** راه‌اندازی کنید.
+    *   یک فولدر در ریپازیتوری خود بسازید: `.github/workflows`
+    *   یک فایل به نام `snake.yml` بسازید و کدهای مربوط به [این لینک](https://raw.githubusercontent.com/Platane/snk/master/.github/workflows/main.yml) را در آن کپی کنید (باید گزینه‌ها را مطابق داکیومنت آن ریپازیتوری تنظیم کنید تا فایل خروجی را در برنچ `output` ذخیره کند).
 
-  deploy-ghpages:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          cache: yarn
-          node-version: 16
-      - run: yarn install --frozen-lockfile
+2.  **تکنولوژی‌ها:** من یک لیست پیش‌فرض از تکنولوژی‌های پرطرفدار (React, Python, Docker, Go, etc.) قرار دادم. اگر با تکنولوژی دیگری کار می‌کنید، می‌توانید در بخش `Tech Stack` نام‌ها را تغییر دهید (لیست کامل آیکون‌ها در سایت [skillicons.dev](https://skillicons.dev) موجود است).
 
-      - run: yarn build:demo
-        env:
-          GITHUB_USER_CONTRIBUTION_API_ENDPOINT: https://snk-one.vercel.app/api/github-user-contribution/
-
-      - uses: crazy-max/ghaction-github-pages@v2.6.0
-        if: success() && github.ref == 'refs/heads/master'
-        with:
-          target_branch: gh-pages
-          build_dir: packages/demo/dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN_GH_PAGES }}
+3.  **تم رنگی:** از تم `tokyonight` استفاده شده که ظاهری مدرن و تیره دارد.
